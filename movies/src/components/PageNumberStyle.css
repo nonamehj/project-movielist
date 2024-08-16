@@ -1,0 +1,98 @@
+.page-container {
+  padding: 5px 0;
+}
+
+.page-btn {
+  height: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.prev-btn,
+.next-btn {
+  flex: 0 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bold;
+  display: none;
+}
+.newPage-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newPage {
+  flex: 1;
+  height: 30px;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.newPage:hover,
+.next-btn:hover,
+.prev-btn:hover {
+  border-radius: 0.25rem;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s linear;
+}
+@media screen and (min-width: 576px) {
+  .next-btn,
+  .prev-btn {
+    display: block;
+    flex: 0 50px;
+  }
+  .newPage-btn {
+    flex: 0 80%;
+  }
+  .newPage {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .page-container {
+    padding: 6px 0;
+  }
+  .page-btn {
+    height: 40px;
+  }
+  .newPage-btn {
+    flex: 0 70%;
+  }
+  .newPage {
+    font-size: 1.1rem;
+  }
+  .next-btn,
+  .prev-btn {
+    font-size: 1.1rem;
+    flex: 0 80px;
+  }
+}
+@media screen and (min-width: 915px) {
+  .page-container {
+    padding: 8px 0;
+  }
+  .newPage-btn {
+    flex: 0 60%;
+  }
+  .newPage {
+    font-size: 1.2rem;
+  }
+  .next-btn,
+  .prev-btn {
+    flex: 1;
+    font-size: 1.2rem;
+  }
+}
