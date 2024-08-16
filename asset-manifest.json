@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/nonamehj.github.io/project-movielist/static/css/main.06b0e755.css",
-    "main.js": "/nonamehj.github.io/project-movielist/static/js/main.8f65aea2.js",
-    "static/media/movielogo.webp": "/nonamehj.github.io/project-movielist/static/media/movielogo.288b959dad17a6289fc1.webp",
-    "index.html": "/nonamehj.github.io/project-movielist/index.html",
-    "main.06b0e755.css.map": "/nonamehj.github.io/project-movielist/static/css/main.06b0e755.css.map",
-    "main.8f65aea2.js.map": "/nonamehj.github.io/project-movielist/static/js/main.8f65aea2.js.map"
+    "main.css": "/project-movielist/static/css/main.06b0e755.css",
+    "main.js": "/project-movielist/static/js/main.827fe534.js",
+    "static/media/movielogo.webp": "/project-movielist/static/media/movielogo.288b959dad17a6289fc1.webp",
+    "index.html": "/project-movielist/index.html",
+    "main.06b0e755.css.map": "/project-movielist/static/css/main.06b0e755.css.map",
+    "main.827fe534.js.map": "/project-movielist/static/js/main.827fe534.js.map"
   },
   "entrypoints": [
     "static/css/main.06b0e755.css",
-    "static/js/main.8f65aea2.js"
+    "static/js/main.827fe534.js"
   ]
 }
