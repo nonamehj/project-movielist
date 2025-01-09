@@ -1,10 +1,10 @@
-import MoviesList from "../components/MoviesList";
+import MoviesList from "../components/moviesList/MovieList";
 
 const Kids = () => {
   return (
-    <div>
+    <>
       <MoviesList name="kids" />
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,204 @@
+.section-search {
+  flex: 0 0 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  /* border: 1px solid red; */
+  /* margin-top: 0.5rem; */
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 70%; */
+  /* height: 40%; */
+  height: 50%;
+  width: 90%;
+  box-shadow: 2px 3px 2px 0 rgba(255, 255, 255, 0.4);
+  background-color: #f2f2f2;
+  border-radius: 0.25rem;
+}
+.form-control {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.form-control input {
+  flex: 1;
+  height: 100%;
+  font-size: 1rem;
+  text-indent: 1rem;
+}
+.form-control input::placeholder {
+  padding: 0.5rem 0;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  /* border: 1px solid red; */
+}
+
+.search-btn {
+  flex: 0 0 35px;
+  /* height: 30px; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+  /* border: 1px solid green; */
+}
+.search-btn .icon {
+  font-size: 1rem;
+  padding: 0.2rem;
+}
+@media screen and (max-width: 479px) {
+  .section-search {
+    flex: 0 0 60px;
+    flex: 0 0 70px;
+  }
+  .search-form {
+    /* width: 90%; */
+  }
+  .form-control input {
+    text-indent: 0.5rem;
+    font-size: 0.85rem;
+  }
+  .form-control input::placeholder {
+    font-size: 0.85rem;
+  }
+  .search-btn {
+    flex: 0 0 40px;
+  }
+  .search-btn .icon {
+    font-size: 0.85rem;
+    padding: 0.25rem;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .section-search {
+    flex: 0 0 70px;
+    flex: 0 0 80px;
+  }
+  .search-form {
+    /* width: 90%; */
+  }
+  .form-control input {
+    text-indent: 0.75rem;
+    font-size: 0.9rem;
+  }
+  .form-control input::placeholder {
+    font-size: 0.9rem;
+  }
+  .search-btn {
+    flex: 0 0 50px;
+  }
+  .search-btn .icon {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section-search {
+    flex: 0 0 80px;
+    /* flex: 0 0 110px; */
+    flex: 0 0 90px;
+  }
+  .search-form {
+    /* width: 90%; */
+  }
+  .form-control input {
+    text-indent: 1rem;
+    font-size: 1rem;
+  }
+  .form-control input::placeholder {
+    font-size: 1rem;
+  }
+  .search-btn {
+    flex: 0 0 60px;
+  }
+  .search-btn .icon {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-search {
+    flex: 0 0 90px;
+    flex: 0 0 120px;
+    flex: 0 0 100px;
+    /* flex: 0 0 20%; */
+  }
+  .search-form {
+    /* width: 90%; */
+  }
+  .form-control input {
+    text-indent: 1rem;
+    font-size: 1.1rem;
+  }
+  .form-control input::placeholder {
+    font-size: 1.1rem;
+  }
+  .search-btn {
+    flex: 0 0 70px;
+  }
+  .search-btn .icon {
+    font-size: 1.1rem;
+    padding: 0.3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .section-search {
+    flex: 0 0 100px;
+    flex: 0 0 110px;
+  }
+  .search-form {
+    /* width: 90%; */
+  }
+  .form-control input {
+    text-indent: 1rem;
+    font-size: 1.2rem;
+  }
+  .form-control input::placeholder {
+    font-size: 1.2rem;
+  }
+  .search-btn {
+    flex: 0 0 80px;
+  }
+  .search-btn .icon {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section-search {
+    flex: 0 0 110px;
+    flex: 0 0 120px;
+  }
+  .search-form {
+    /* width: 90%; */
+  }
+  .form-control input {
+    text-indent: 1rem;
+    font-size: 1.3rem;
+  }
+  .form-control input::placeholder {
+    /* padding: 1.75rem; */
+
+    font-size: 1.3rem;
+  }
+  .search-btn {
+    flex: 0 0 90px;
+  }
+  .search-btn .icon {
+    font-size: 1.3rem;
+    padding: 0.3rem;
+  }
+}

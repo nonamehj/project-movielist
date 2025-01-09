@@ -1,0 +1,39 @@
+.no-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.no-display h3 {
+  display: block;
+  padding: 0.25rem;
+}
+@media screen and (max-width: 479px) {
+  .no-display h3 {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .no-display h3 {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .no-display h3 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .no-display h3 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .no-display h3 {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+}

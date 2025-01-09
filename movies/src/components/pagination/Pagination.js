@@ -1,9 +1,9 @@
-import "./PageNumberStyle.css";
+import React from "react";
+import "./PaginationStyle.css";
 import { useCallback, useMemo } from "react";
-import { useGlobalContext } from "../context";
-const PageNumber = () => {
+import { useGlobalContext } from "./../../context";
+const Pagination = () => {
   const { setIndex, index: value } = useGlobalContext();
-
   const Pages = useMemo(() => {
     return Array.from({ length: 10 }, (_, index) => index);
   }, []);
@@ -36,7 +36,7 @@ const PageNumber = () => {
         <button className="prev-btn" onClick={prevChange}>
           prev
         </button>
-        <div className="newPage-btn">
+        <div className="newPage-btn page-btns">
           {Pages.map((page, index) => {
             let position = "";
             if (index === value - 1) {
@@ -62,4 +62,4 @@ const PageNumber = () => {
   );
 };
 
-export default PageNumber;
+export default Pagination;

@@ -8,35 +8,58 @@
 
 main {
   width: 100%;
-  min-height: 100vh;
+  /* height: calc(var(--vh) * 100); */
+  /* max-height: calc(var(--vh) * 100); */
+  /* min-height: calc(var(--vh) * 100); */
+  /* height: 100%; */
+  height: calc(var(--vh) * 100);
+  /* min-height: 100vh; */
+  /* min-height: calc(var(--vh) * 100); */
+
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: black;
+  overflow: hidden;
+  /* overflow-y: auto; */
 }
 
-.section {
-  width: 95vw;
+section {
+  flex: 1;
+  height: 100%;
   margin: 0 auto;
+  /* margin: 0.35rem auto; */
+  margin: 0.5rem auto;
+  /* border: 1px solid red; */
+  width: 100%;
 }
-.section-loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-transform: capitalize;
-  margin-top: 30px;
+
+@media screen and (max-width: 479px) {
+  section {
+    width: 100%;
+  }
 }
-.loading {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  border: 3px solid #ccc;
-  border-top-color: #645cff;
-  animation: load 0.5s linear infinite;
-  margin: 1rem auto;
+@media screen and (min-width: 480px) {
+  section {
+    width: 100%;
+  }
 }
-@keyframes load {
-  to {
-    transform: rotate(360deg);
+@media screen and (min-width: 768px) {
+  section {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  section {
+    width: 85%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  section {
+    width: 85%;
   }
 }

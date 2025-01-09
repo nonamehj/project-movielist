@@ -5,7 +5,7 @@ import { useGlobalContext } from "./../context";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../movielogo.webp";
 
-const menus = ["Home", "Popular", "Theatre", "Kids", "Comedie"];
+const menus = ["home", "popular", "theatre", "kids", "comedie"];
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,22 +18,22 @@ const Navbar = () => {
       let url = "";
       setIndex(1);
       setIsSidebarOpen(false);
-      if (page === "Home") {
+      if (page === "home") {
         url = "/discover/movie?sort_by=popularity.desc&page=";
       }
-      if (page === "Popular") {
+      if (page === "popular") {
         url = "/discover/movie?sort_by=popularity.desc&page=";
       }
 
-      if (page === "Theatre") {
+      if (page === "theatre") {
         url =
           "/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2023-11-10&page=";
       }
-      if (page === "Kids") {
+      if (page === "kids") {
         url =
           "/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&page=";
       }
-      if (page === "Comedie") {
+      if (page === "comedie") {
         url =
           "/discover/movie?with_genres=35&cast_with=23659&sor_by=revenue.esc&page=";
       }
@@ -55,7 +55,15 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="logo-img" className="logo" />
+            {/* <img src={logo} alt="logo-img" className="logo" /> */}
+
+            <div className="logo">
+              <span>m</span>
+              <span>o</span>
+              <span>v</span>
+              <span>i</span>
+              <span>e</span>
+            </div>
           </Link>
           <div onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             {isSidebarOpen ? (
@@ -74,7 +82,7 @@ const Navbar = () => {
             {menus.map((menu) => {
               return (
                 <li key={menu}>
-                  {menu === "Home" ? (
+                  {menu === "home" ? (
                     <Link to="/" onClick={() => getPage(menu)}>
                       {menu}
                     </Link>

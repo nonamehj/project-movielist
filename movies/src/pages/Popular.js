@@ -1,11 +1,11 @@
 import React from "react";
-import MoviesList from "../components/MoviesList";
-
+// import MoviesList from "../components/MoviesList";
+import MoviesList from "../components/moviesList/MovieList";
 const Popular = () => {
   return (
-    <div>
+    <>
       <MoviesList name="popular" />
-    </div>
+    </>
   );
 };
 

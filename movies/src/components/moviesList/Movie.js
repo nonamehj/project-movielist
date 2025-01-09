@@ -14,7 +14,7 @@ const Movie = ({
   name,
 }) => {
   const navigate = useNavigate();
-  const imgeUrl = poster_path
+  const imageUrl = poster_path
     ? `${IMAGE_BASE_URL}${poster_path}`
     : PLACEHOLDER_IMAGE;
   const handleClick = useCallback(() => {
@@ -23,14 +23,15 @@ const Movie = ({
   return (
     <article className="movie">
       <div className="movie-center" onClick={handleClick}>
-        <img src={imgeUrl} alt="img" className="movie-img" />
+        <img src={imageUrl} alt="img" className="movie-img" />
       </div>
-      <div className="movie-footer">
+      <div className="movie-info">
         <h3>{original_title}</h3>
-        <div className="footer">
+        {/* <div className="footer">
           <p>average {`${vote_average.toFixed(1)}`}</p>
           <p>popularity {Math.floor(popularity)}</p>
-        </div>
+        </div> */}
+
         <Link to={`/${name}/${id}`} className="btn btn-details">
           details
         </Link>

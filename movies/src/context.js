@@ -39,7 +39,15 @@ const AppProvider = ({ children }) => {
   }, [url, index, fetchMovies]);
   return (
     <AppContext.Provider
-      value={{ setIndex, setUrl, loading, movies, setSearchQuery, searchQuery }}
+      value={{
+        setIndex,
+        index,
+        setUrl,
+        loading,
+        movies,
+        setSearchQuery,
+        searchQuery,
+      }}
     >
       {children}
     </AppContext.Provider>

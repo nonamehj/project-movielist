@@ -1,7 +1,8 @@
 import "./SearchFormStyle.css";
 import { useRef } from "react";
-import { useGlobalContext } from "../context";
 import { useNavigate } from "react-router-dom";
+import { useGlobalContext } from "./../../context";
+import NoResults from "../error/NoResults";
 
 const SearchForm = () => {
   const { setUrl, setSearchQuery, searchQuery, setIndex, movies } =
@@ -12,17 +13,12 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let blank_pattern = /^\s+|\s+$/g;
-    let searchStr = searchRef.current.value;
-    if (searchStr.replace(blank_pattern, "") === "") {
+    // let blank_pattern = /^\s+|\s+$/g;
+    // let searchStr = searchRef.current.value;
+    let searchStr = searchRef.current.value.trim();
+    if (!searchStr) {
       if (movies.length < 1) {
-        return (
-          <section className="section">
-            <h2 className="section-title">
-              no movies matched your search criteria
-            </h2>
-          </section>
-        );
+        return <NoResults />;
       }
       searchRef.current.value = "";
       searchRef.current.focus();
@@ -32,6 +28,20 @@ const SearchForm = () => {
       navigate("/search");
       searchRef.current.value = "";
     }
+    // if (searchStr.replace(blank_pattern, "") === "") {
+    //   if (movies.length < 1) {
+    //     return (
+    //       <TextComponent />
+    //     );
+    //   }
+    //   searchRef.current.value = "";
+    //   searchRef.current.focus();
+    // } else {
+    //   setIndex(1);
+    //   setUrl(`/search/movie?query=${searchQuery}&page=`);
+    //   navigate("/search");
+    //   searchRef.current.value = "";
+    // }
   };
   const searchChange = () => {
     setSearchQuery(searchRef.current.value);
@@ -49,7 +59,7 @@ const SearchForm = () => {
             placeholder="search your favorite movie"
           />
           <button className="search-btn" onClick={handleSubmit}>
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass icon"></i>
           </button>
         </div>
       </form>
