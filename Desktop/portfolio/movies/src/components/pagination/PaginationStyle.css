@@ -1,0 +1,132 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.prev-btn,
+.next-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0.25rem 1rem;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.page-btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.index-page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.25rem;
+  padding: 0.25rem;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+.prev-btn:hover,
+.next-btn:hover,
+.activePage,
+.index-page:hover {
+  color: #fff;
+}
+@media screen and (max-width: 479px) {
+  .page-wrapper {
+    padding: 0;
+  }
+  .prev-btn,
+  .next-btn {
+    padding: 0.25rem;
+    font-size: 0.95rem;
+  }
+  .index-page {
+    margin: 0 0.2rem;
+    padding: 0;
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .prev-btn,
+  .next-btn {
+    /* padding: 0.25rem 0.5rem; */
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+  }
+  .index-page {
+    padding: 0.25rem;
+    margin: 0 0.25rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .prev-btn,
+  .next-btn {
+    padding: 0.25rem 1rem;
+    font-size: 1.1rem;
+  }
+  .index-page {
+    padding: 0.25rem;
+    margin: 0 0.5rem;
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .prev-btn,
+  .next-btn {
+    padding: 0.25rem 1rem;
+    font-size: 1.2rem;
+  }
+  .index-page {
+    padding: 0.25rem;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .prev-btn,
+  .next-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.3rem;
+  }
+  .index-page {
+    padding: 0.5rem;
+    margin: 0 0.75rem;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .prev-btn,
+  .next-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+  }
+  .index-page {
+    padding: 0.5rem;
+    margin: 0 0.75rem;
+    font-size: 1.4rem;
+  }
+}

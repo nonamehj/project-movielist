@@ -1,0 +1,186 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-btn {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.prev-btn,
+.next-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.newPage-btn {
+  flex: 1;
+  display: flex;
+}
+
+.newPage {
+  flex: 1;
+  border-color: transparent;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s linear;
+}
+.newPage:hover,
+.activePage:hover,
+.prev-btn:hover,
+.next-btn:hover {
+  color: #007bff;
+}
+.activePage {
+  color: #007bff;
+}
+
+@media screen and (max-width: 479px) {
+  .page-container {
+    flex: 0 0 35px;
+    /* margin: 0.125rem 0 0.15rem; */
+    padding: 0;
+
+    /**/
+    width: 90vw;
+    margin: 0.125rem auto;
+  }
+  .prev-btn,
+  .next-btn {
+    display: none;
+  }
+  .newPage {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .page-container {
+    flex: 0 0 40px;
+    /* margin: 0.15rem 0 0.2rem; */
+    padding: 0.15rem;
+    /**/
+
+    width: 90vw;
+    margin: 0.15rem auto;
+  }
+  .prev-btn,
+  .next-btn {
+    flex: 0 0 70px;
+    padding: 0 0.125rem;
+    font-size: 0.95rem;
+  }
+  .newPage {
+    font-size: 0.95rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .page-container {
+    flex: 0 0 45px;
+    /* margin: 0.175rem 0 0.225rem; */
+    padding: 0.175rem;
+    /**/
+    /* border: 1px solid red; */
+    width: 80vw;
+    margin: 0.175rem auto;
+  }
+  .newPage-btn {
+    justify-content: space-evenly;
+  }
+  .prev-btn,
+  .next-btn {
+    flex: 0 0 90px;
+    padding: 0 0.1275rem;
+    font-size: 1rem;
+  }
+  .newPage {
+    flex: 0 0 50px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page-container {
+    flex: 0 0 50px;
+    margin: 0.2rem 0 0.25rem;
+    padding: 0.2rem;
+    /**/
+    width: 80vw;
+    margin: 0.2rem auto;
+  }
+  .newPage-btn {
+    justify-content: space-evenly;
+  }
+  .prev-btn,
+  .next-btn {
+    flex: 0 0 95px;
+    padding: 0 0.1275rem;
+    font-size: 1.1rem;
+    /* border: 1px solid red; */
+  }
+  .newPage {
+    flex: 0 0 60px;
+    font-size: 1.1rem;
+    /* border: 1px solid red; */
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .page-container {
+    flex: 0 0 55px;
+    margin: 0.225rem 0 0.275rem;
+    padding: 0.225rem;
+    /**/
+    width: 70vw;
+    margin: 0.225rem auto;
+  }
+  .newPage-btn {
+    justify-content: space-evenly;
+  }
+  .prev-btn,
+  .next-btn {
+    flex: 0 0 100px;
+    padding: 0 0.1275rem;
+    font-size: 1.125rem;
+  }
+  .newPage {
+    flex: 0 0 65px;
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .page-container {
+    flex: 0 0 60px;
+    margin: 0.25rem 0 0.3rem;
+    padding: 0.25rem;
+
+    /**/
+    width: 70vw;
+    margin: 0.25rem auto;
+  }
+  .newPage-btn {
+    justify-content: space-evenly;
+  }
+  .prev-btn,
+  .next-btn {
+    flex: 0 0 110px;
+    padding: 0 0.13rem;
+    font-size: 1.15rem;
+  }
+  .newPage {
+    flex: 0 0 70px;
+    font-size: 1.15rem;
+  }
+}

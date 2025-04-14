@@ -1,0 +1,99 @@
+.section-movieslist {
+  display: flex;
+  flex-direction: column;
+}
+.movies-container {
+  display: grid;
+  background-color: #000;
+  /* margin-bottom: 0.2rem; */
+}
+
+.section-title {
+  width: 95vw;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1.5rem auto 0.8rem;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 479px) {
+  .movies-container {
+    /* grid-auto-rows: minmax(300px, 340px); */
+    grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
+    gap: 0.5rem;
+    /* border: 1px solid red; */
+  }
+  .section-title {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 480px) {
+  .movies-container {
+    /*711*/
+    /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
+    /*493, 744*/
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); */
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 380px;
+    gap: 0.5rem;
+  }
+  .section-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .movies-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); */
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 410px;
+  }
+  .section-title {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .movies-container {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); */
+    grid-auto-rows: 440px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movies-container {
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); */
+    grid-auto-rows: 460px;
+    /* grid-auto-rows: 520px; */
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .movies-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    grid-auto-rows: 470px;
+    /* grid-template-columns: repeat(5, 1fr); */
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
