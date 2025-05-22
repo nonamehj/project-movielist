@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/project-movielist/static/css/main.50fdffc5.css",
+    "main.css": "/project-movielist/static/css/main.f85175db.css",
     "main.js": "/project-movielist/static/js/main.3abd52f2.js",
     "static/media/noImage.webp": "/project-movielist/static/media/noImage.bdfe7a8f692206ce516c.webp",
     "index.html": "/project-movielist/index.html",
-    "main.50fdffc5.css.map": "/project-movielist/static/css/main.50fdffc5.css.map",
+    "main.f85175db.css.map": "/project-movielist/static/css/main.f85175db.css.map",
     "main.3abd52f2.js.map": "/project-movielist/static/js/main.3abd52f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.50fdffc5.css",
+    "static/css/main.f85175db.css",
     "static/js/main.3abd52f2.js"
   ]
 }
