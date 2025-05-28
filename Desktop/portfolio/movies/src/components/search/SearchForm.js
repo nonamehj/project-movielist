@@ -2,8 +2,7 @@ import "./SearchFormStyle.css";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "./../../context";
-import NoResults from "../error/NoResults";
-
+import NoSearchResult from "../messages/NoSearchResult";
 const SearchForm = () => {
   const { setUrl, setSearchQuery, searchQuery, setIndex, movies } =
     useGlobalContext();
@@ -12,13 +11,10 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // let blank_pattern = /^\s+|\s+$/g;
-    // let searchStr = searchRef.current.value;
     let searchStr = searchRef.current.value.trim();
     if (!searchStr) {
       if (movies.length < 1) {
-        return <NoResults />;
+        return <NoSearchResult />;
       }
       searchRef.current.value = "";
       searchRef.current.focus();
@@ -28,20 +24,6 @@ const SearchForm = () => {
       navigate("/search");
       searchRef.current.value = "";
     }
-    // if (searchStr.replace(blank_pattern, "") === "") {
-    //   if (movies.length < 1) {
-    //     return (
-    //       <TextComponent />
-    //     );
-    //   }
-    //   searchRef.current.value = "";
-    //   searchRef.current.focus();
-    // } else {
-    //   setIndex(1);
-    //   setUrl(`/search/movie?query=${searchQuery}&page=`);
-    //   navigate("/search");
-    //   searchRef.current.value = "";
-    // }
   };
   const searchChange = () => {
     setSearchQuery(searchRef.current.value);

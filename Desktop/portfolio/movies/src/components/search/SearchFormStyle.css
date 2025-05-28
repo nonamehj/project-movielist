@@ -2,18 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid red; */
-}
-.search-form {
   width: 100%;
-  /* border: 1px solid red; */
 }
+
 .form-control {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.25rem;
-  /* border: 1px solid blue; */
 }
 .form-control input {
   width: 100%;
@@ -34,12 +30,17 @@
   margin-left: 0.5rem;
   background-color: transparent;
   border-color: transparent;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  font-size: 1rem;
   color: #000;
   cursor: pointer;
-  background-color: #fff;
-  font-size: 1rem;
 }
 @media screen and (max-width: 479px) {
+  .search-form {
+    width: 95%;
+    max-width: 100%;
+  }
   .form-control input {
     padding: 0.5rem 0;
     padding-left: 0.5rem;
@@ -50,6 +51,10 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  .search-form {
+    width: 95%;
+    max-width: 100%;
+  }
   .form-control input {
     padding: 0.5rem 0;
     padding-left: 0.5rem;
@@ -58,8 +63,11 @@
     font-size: 0.95rem;
   }
 }
-
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .search-form {
+    width: 90%;
+    max-width: 1024px;
+  }
   .form-control input {
     padding: 0.6rem 0;
     padding-left: 0.75rem;
@@ -69,6 +77,10 @@
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .search-form {
+    width: 90%;
+    max-width: 1140px;
+  }
   .form-control input {
     padding: 0.6rem 0;
     padding-left: 0.75rem;
@@ -78,6 +90,10 @@
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .search-form {
+    width: 85%;
+    max-width: 1280px;
+  }
   .form-control input {
     padding: 0.7rem 0;
     padding-left: 1rem;
@@ -87,6 +103,10 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .search-form {
+    width: 85%;
+    max-width: 1440px;
+  }
   .form-control input {
     padding: 0.7rem 0;
     padding-left: 1rem;

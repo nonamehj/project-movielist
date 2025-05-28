@@ -31,8 +31,8 @@ const Pagination = () => {
   );
 
   return (
-    <div className="page-container">
-      <div className="page-wrapper">
+    <div className="pagination-container">
+      <div className="pagination-wrapper">
         <button className="prev-btn" onClick={prevChange}>
           prev
         </button>
@@ -40,7 +40,7 @@ const Pagination = () => {
           {Pages.map((page, index) => {
             let position = "";
             if (index === value - 1) {
-              position = "activePage";
+              position = "active-page";
             }
 
             return (

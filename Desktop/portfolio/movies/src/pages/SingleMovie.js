@@ -2,17 +2,28 @@ import "./SingleMovieStyle.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import Loading from "../components/loading/Loading";
-import NoResults from "../components/error/NoResults";
-
+import PLACEHOLDER_IMAGE from "../noImage.webp";
+import NoSearchResult from "./../components/messages/NoSearchResult";
 const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
-const PLACEHOLDER_IMAGE =
-  "https://via.placeholder.com/500x750?text=No+Image+Available";
+
+const getMaxChars = () => {
+  const width = window.innerWidth;
+  if (width <= 479) return 150;
+  if (width <= 767) return 180;
+  if (width <= 1023) return 220;
+  if (width <= 1279) return 260;
+  if (width <= 1439) return 300;
+  return 340;
+};
+
 const SingleMovie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [maxChars, setMaxChars] = useState(getMaxChars());
 
   const fetchSingleMovie = useCallback(async () => {
     setLoading(true);
@@ -49,20 +60,28 @@ const SingleMovie = () => {
   useEffect(() => {
     fetchSingleMovie();
   }, [id, fetchSingleMovie]);
+  useEffect(() => {
+    const handleResize = () => setMaxChars(getMaxChars());
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   if (loading) {
     return <Loading />;
   }
   if (!movie) {
-    return <NoResults />;
+    return <NoSearchResult />;
   } else {
     const { img, title, date, average, overview, runtime, popularity } = movie;
     const imgeUrl = img ? `${IMAGE_BASE_URL}${img}` : PLACEHOLDER_IMAGE;
+    const isLong = overview.length >= maxChars;
+    const shortText = overview.slice(0, maxChars);
     return (
       <section className="section single-movie-section">
         <div className="single-container">
           <h2 className="single-title">{title}</h2>
           <div className="single-movie">
-            <div className="single-center">
+            <div className="single-image-wrapper">
               <img src={imgeUrl} alt={title} className="single-img" />
             </div>
             <div className="single-movie-info">
@@ -83,7 +102,22 @@ const SingleMovie = () => {
                 <span className="movie-data"> {Math.floor(popularity)}</span>
               </p>
               <p>
-                overview <span className="movie-data overview">{overview}</span>
+                overview{" "}
+                <span className="movie-data overview">
+                  {isLong && !isOpen ? (
+                    <>
+                      {shortText}{" "}
+                      <button
+                        className="btn-readmore"
+                        onClick={() => setIsOpen(true)}
+                      >
+                        더보기
+                      </button>
+                    </>
+                  ) : (
+                    overview
+                  )}
+                </span>
               </p>
             </div>
           </div>

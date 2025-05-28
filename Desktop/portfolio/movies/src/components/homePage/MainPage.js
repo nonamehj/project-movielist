@@ -2,29 +2,20 @@ import "./MainPageStyle.css";
 import { useGlobalContext } from "./../../context";
 import { useEffect, useRef, useState, useCallback } from "react";
 import SlideMovies from "./SlideMovies";
+import PreviewMovies from "./PreviewMovies";
 import Loading from "../loading/Loading";
 const MainPage = () => {
   const { movies, setIndex, loading } = useGlobalContext();
   const [pageValue, setPageValue] = useState(0);
   const randomNumber = useRef(10);
-  const prevPage = useCallback(() => {
-    setPageValue((prev) => {
-      let prevNum = prev - 1;
-      if (prevNum < 0) {
-        prevNum = movies.length - 1;
-      }
-      return prevNum;
-    });
-  }, [movies.length]);
+
   const nextPage = useCallback(() => {
-    setPageValue((next) => {
-      let nextNum = next + 1;
-      if (nextNum > movies.length - 1) {
-        nextNum = 0;
-      }
-      return nextNum;
-    });
+    setPageValue((prev) => (prev + 1) % movies.length);
   }, [movies.length]);
+  const prevPage = useCallback(() => {
+    setPageValue((prev) => (prev - 1 + movies.length) % movies.length);
+  }, [movies.length]);
+
   useEffect(() => {
     let pageNum = Math.floor(Math.random() * randomNumber.current);
     if (pageNum === 0) {
@@ -35,19 +26,35 @@ const MainPage = () => {
     return setIndex(pageNum);
   }, [setIndex]);
 
+  useEffect(() => {
+    const timeId = setTimeout(() => {
+      setPageValue((prev) => (prev === 20 ? 0 : prev + 1));
+    }, 4000);
+    return () => clearTimeout(timeId);
+  }, [pageValue]);
+
   if (loading) {
     return <Loading />;
   } else {
     return (
       <section className="section-home">
-        <SlideMovies pageValue={pageValue} />
-        <div className="index-container">
-          <button className="prev-index-btn" name="prev" onClick={prevPage}>
-            <i className="fa-solid fa-angle-left left-btn"></i>
+        <div className="home-wrapper">
+          <SlideMovies pageValue={pageValue} />
+          <button className="prev-index-btn" name="prev">
+            <i
+              className="fa-solid fa-angle-left left-btn"
+              onClick={prevPage}
+            ></i>
           </button>
-          <button className="next-index-btn" name="next" onClick={nextPage}>
-            <i className="fa-solid fa-angle-right right-btn"></i>
+          <button className="next-index-btn" name="next">
+            <i
+              className="fa-solid fa-angle-right right-btn"
+              onClick={nextPage}
+            ></i>
           </button>
+          <div className="preview-wrapper">
+            <PreviewMovies setPageValue={setPageValue} pageValue={pageValue} />
+          </div>
         </div>
       </section>
     );

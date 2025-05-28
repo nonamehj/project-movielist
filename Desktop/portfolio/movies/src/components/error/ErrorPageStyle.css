@@ -1,0 +1,103 @@
+.error-page {
+  flex: 1;
+  width: 100%;
+}
+
+.error-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 0.5rem 0;
+  text-transform: capitalize;
+  color: #fff;
+}
+.error-title {
+  margin-bottom: 2rem;
+}
+.error-btn {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.25rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 479px) {
+  .error-page-wrapper {
+    width: 95%;
+    max-width: 100%;
+  }
+  .error-title {
+    font-size: 1.4rem;
+  }
+  .error-btn {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .error-page-wrapper {
+    width: 95%;
+    max-width: 100%;
+  }
+  .error-title {
+    font-size: 1.5rem;
+  }
+  .error-btn {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .error-page-wrapper {
+    width: 90%;
+    max-width: 1024px;
+  }
+  .error-title {
+    font-size: 1.6rem;
+  }
+  .error-btn {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .error-page-wrapper {
+    width: 90%;
+    max-width: 1140px;
+  }
+  .error-title {
+    font-size: 1.7rem;
+  }
+  .error-btn {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .error-page-wrapper {
+    width: 85%;
+    max-width: 1280px;
+  }
+  .error-title {
+    font-size: 1.8rem;
+  }
+  .error-btn {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .error-page-wrapper {
+    width: 85%;
+    max-width: 1440px;
+  }
+  .error-title {
+    font-size: 1.9rem;
+  }
+  .error-btn {
+    font-size: 1.5rem;
+  }
+}

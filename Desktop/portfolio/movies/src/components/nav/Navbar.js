@@ -2,7 +2,7 @@ import "./NavbarStyle.css";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-// import logo from "../../movielogo.webp";
+import { MdMovie } from "react-icons/md";
 import NavItem from "./NavItem";
 
 const Navbar = () => {
@@ -23,30 +23,17 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            {/* <img src={logo} alt="logo-img" className="logo" /> */}
-
             <div className="logo">
-              <span>m</span>
-              <span>o</span>
-              <span>v</span>
-              <span>i</span>
-              <span>e</span>
+              <MdMovie className="logo-icon" />
+              <span className="logo-title">cinema</span>
             </div>
           </Link>
-          <div onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-            <button className="nav-toggle">
-              {isSidebarOpen ? <FaTimes /> : <FaBars />}
-            </button>
-            {/* {isSidebarOpen ? (
-              <button className="nav-toggle">
-                <FaTimes />
-              </button>
-            ) : (
-              <button className="nav-toggle">
-                <FaBars />
-              </button>
-            )} */}
-          </div>
+          <button
+            className="nav-toggle"
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          >
+            {isSidebarOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
         <div className="links-container" ref={linksContainerRef}>
           <ul className="links" ref={linksRef}>

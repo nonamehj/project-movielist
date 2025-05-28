@@ -2,47 +2,96 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0.25rem;
-  margin: 0.5rem auto;
-  overflow: hidden;
-  /* border: 1px solid red; */
+  padding: 0;
+  margin-top: 1.5rem;
+  overflow-y: overlay;
 }
+
 .movie-list-container {
   flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.5rem;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
-
+.movie-list-wrapper {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  padding: 0 0.25rem;
+}
 @media screen and (max-width: 479px) {
+  .section-movie-list {
+    margin-top: 0.75rem;
+  }
+
   .movie-list-container {
-    grid-auto-rows: 300px;
+    width: 95%;
+    max-width: 100%;
+  }
+  .movie-list-wrapper {
+    grid-auto-rows: 250px;
   }
 }
-
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  .section-movie-list {
+    margin-top: 0.75rem;
+  }
+
   .movie-list-container {
-    grid-auto-rows: 320px;
+    width: 95%;
+    max-width: 100%;
+  }
+  .movie-list-wrapper {
+    grid-auto-rows: 270px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .section-movie-list {
+    margin-top: 1.5rem;
+  }
   .movie-list-container {
-    grid-auto-rows: 340px;
+    width: 90%;
+    max-width: 1024px;
+  }
+  .movie-list-wrapper {
+    grid-auto-rows: 290px;
   }
 }
+
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .section-movie-list {
+    margin-top: 1.5rem;
+  }
   .movie-list-container {
-    grid-auto-rows: 360px;
+    width: 90%;
+    max-width: 1140px;
+  }
+  .movie-list-wrapper {
+    grid-auto-rows: 310px;
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
+  .section-movie-list {
+    margin-top: 1.75rem;
+  }
   .movie-list-container {
-    grid-auto-rows: 380px;
+    width: 85%;
+    max-width: 1280px;
+  }
+  .movie-list-wrapper {
+    grid-auto-rows: 330px;
   }
 }
 @media screen and (min-width: 1440px) {
+  .section-movie-list {
+    margin-top: 1.75rem;
+  }
   .movie-list-container {
-    grid-auto-rows: 400px;
+    width: 85%;
+    max-width: 1440px;
+  }
+  .movie-list-wrapper {
+    grid-auto-rows: 350px;
   }
 }

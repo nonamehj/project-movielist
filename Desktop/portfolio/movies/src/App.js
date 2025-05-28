@@ -1,17 +1,11 @@
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { Home, Kids, Popular, Comedie, Theatre, Search } from "./pages/";
+import { Home, Kids, Popular, Comedy, Theatre, Search } from "./pages/";
 import SharedLayout from "./pages/SharedLayout";
-import {
-  // SharedLayoutPopular,
-  // SharedLayoutTheatre,
-  // SharedLayoutComedie,
-  // SharedLayoutKids,
-  SharedLayoutSearch,
-  SharedLayoutPage,
-} from "./sharedLayout";
+import { SharedLayoutSearch, SharedLayoutPage } from "./sharedLayout";
 import SingleMovie from "./pages/SingleMovie";
+import ErrorPage from "./components/error/ErrorPage";
 
 function App() {
   useEffect(() => {
@@ -39,7 +33,6 @@ function App() {
   }, []);
 
   return (
-    // <main>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
@@ -56,18 +49,18 @@ function App() {
             <Route index element={<Kids />} />
             <Route path=":id" element={<SingleMovie />} />
           </Route>
-          <Route path="comedie" element={<SharedLayoutPage />}>
-            <Route index element={<Comedie />} />
+          <Route path="comedy" element={<SharedLayoutPage />}>
+            <Route index element={<Comedy />} />
             <Route path=":id" element={<SingleMovie />} />
           </Route>
           <Route path="search" element={<SharedLayoutSearch />}>
             <Route index element={<Search />} />
             <Route path=":id" element={<SingleMovie />} />
           </Route>
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
-    // </main>
   );
 }
 

@@ -1,11 +1,11 @@
 import MoviesList from "../components/moviesList/MovieList";
 
-const Comedie = () => {
+const Comedy = () => {
   return (
     <>
-      <MoviesList name="comedie" />
+      <MoviesList name="comedy" />
     </>
   );
 };
 
-export default Comedie;
+export default Comedy;

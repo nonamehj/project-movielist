@@ -4,16 +4,25 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  /*파이어폭스 스크롤 디자인*/
+  scrollbar-width: thin;
+  scrollbar-color: rgb(180, 180, 180) rgb(40, 40, 40);
 }
 
-/*먼저 다른 브라우저 스크롤 확인후  지울지 말지 고민*/
 ::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(40, 40, 40);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 180, 180);
+  border-radius: 4px;
 }
 
-.scroll {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(220, 220, 220);
 }
 
 main {
@@ -23,60 +32,4 @@ main {
   flex-direction: column;
   background-color: rgb(53, 52, 52);
   overflow: hidden;
-}
-
-section {
-  /* flex: 1; */
-  /* margin: 0.5rem auto; */
-  /* height: 100%; */
-  margin: 0.25rem auto;
-
-  width: 100%;
-
-  /* border: 1px solid red; */
-}
-
-@media screen and (max-width: 479px) {
-  section {
-    /* width: 100%; */
-    /* border: 1px solid red; */
-    /**/
-    width: 95%;
-    max-width: 100%;
-  }
-}
-@media screen and (min-width: 480px) {
-  section {
-    width: 100%;
-
-    /**/
-    width: 95%;
-    max-width: 100%;
-  }
-}
-@media screen and (min-width: 768px) {
-  section {
-    width: 90%;
-    max-width: 1024px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  section {
-    width: 90%;
-    max-width: 1140px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  section {
-    width: 85%;
-    max-width: 1280px;
-    /* width: 90%; */
-  }
-}
-@media screen and (min-width: 1440px) {
-  section {
-    width: 85%;
-    max-width: 1440px;
-    /* width: 90%; */
-  }
 }

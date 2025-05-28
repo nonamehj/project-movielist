@@ -1,10 +1,9 @@
+import "./SlideMoviesStyle.css";
+import React, { memo, useCallback } from "react";
 import { useGlobalContext } from "./../../context";
 import { useNavigate } from "react-router";
-import { useCallback } from "react";
-import "./SlideMoviesStyle.css";
+import PLACEHOLDER_IMAGE from "../../noImage.webp";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
-const PLACEHOLDER_IMAGE =
-  "https://via.placeholder.com/500x750?text=No+Image+Available";
 const SlideMovies = ({ pageValue }) => {
   const { movies } = useGlobalContext();
   const navigate = useNavigate();
@@ -14,61 +13,49 @@ const SlideMovies = ({ pageValue }) => {
     },
     [navigate]
   );
+
   const getSlidePosition = (movieIndex, pageValue) => {
-    if (movieIndex === pageValue) return "activeSlide";
-    if (
-      movieIndex === pageValue - 1 ||
-      (pageValue === 0 && movieIndex === movies.length - 1)
-    )
-      return "lastSlide";
-    if (
-      movieIndex === pageValue + 1 ||
-      (pageValue === movies.length - 1 && movieIndex === 0)
-    )
-      return "nextSlide";
-    return "hiddenSlide";
+    const activeIndex = pageValue;
+    const lastIndex = (activeIndex - 1 + movies.length) % movies.length;
+    const nextIndex = (activeIndex + 1) % movies.length;
+    if (movieIndex === lastIndex) return "lastSlide";
+    if (movieIndex === activeIndex) return "activeSlide";
+    if (movieIndex === nextIndex) return "nextSlide";
+    return null;
   };
+
   return (
     <div className="section-center">
       {movies.map((movie, movieIndex) => {
+        const position = getSlidePosition(movieIndex, pageValue);
+        if (!position) return null;
         const { id, original_title, poster_path } = movie;
         const imageURL = poster_path
           ? `${IMAGE_BASE_URL}${poster_path}`
           : PLACEHOLDER_IMAGE;
-        const position = getSlidePosition(movieIndex, pageValue);
-        // let position = "hiddenSlide";
-        // if (movieIndex === pageValue) {
-        //   position = "activeSlide";
-        // }
-        // if (
-        //   movieIndex === pageValue - 1 ||
-        //   (pageValue === 0 && movies.length - 1 === movieIndex)
-        // ) {
-        //   position = "lastSlide";
-        // }
-        // if (
-        //   movieIndex === pageValue + 1 ||
-        //   (movies.length - 1 === pageValue && movieIndex === 0)
-        // ) {
-        //   position = "nextSlide";
-        // }
-        return (
-          <article key={id} className={`${position} home-article`}>
-            <div
-              className="img-center"
-              onClick={
-                position === "activeSlide" ? () => pageMoveClick(id) : undefined
-              }
-            >
-              <img src={imageURL} alt={original_title} className="home-img" />
-            </div>
 
-            <h3 className="home-title">{original_title}</h3>
-          </article>
+        return (
+          <React.Fragment key={id}>
+            <article className={`${position} home-article`}>
+              <div
+                className="img-center"
+                onClick={
+                  position === "activeSlide" ? () => pageMoveClick(id) : null
+                }
+              >
+                <img src={imageURL} alt={original_title} className="home-img" />
+              </div>
+            </article>
+            {position === "activeSlide" && (
+              <div className={`${position} home-title-center`}>
+                <h3 className="home-title">{original_title}</h3>
+              </div>
+            )}
+          </React.Fragment>
         );
       })}
     </div>
   );
 };
 
-export default SlideMovies;
+export default memo(SlideMovies);
